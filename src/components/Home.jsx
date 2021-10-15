@@ -4,13 +4,14 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import fetchWeather from "../redux/weather/weatherAction";
 
+// loader
+import Loader from "react-loader-spinner";
+import Information from "./Information";
+
 const Home = () => {
   const [value, setValue] = useState("");
   const dispatch = useDispatch();
   const { data, error, loading } = useSelector((state) => state.weatherState);
-//   console.log(
-//     loading ? "Loading..." : error || !data ? error : data.weather[0].main
-//   );
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -30,8 +31,10 @@ const Home = () => {
         </button>
       </form>
       <div>
-        {loading && "Loading..."}
-        {!error && data && data.weather[0].main}
+        {loading && (
+          <Loader type="Rings" color="#340E57" height={80} width={80} />
+        )}
+        {!error && data && <Information city={data} />}
         {error && error}
       </div>
     </div>
