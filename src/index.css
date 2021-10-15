@@ -1,6 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --primary-color: #112031;
+  --secondary-color: #345B63;
+}
 
 * {
   margin: 0;
@@ -16,9 +22,10 @@ html {
 }
 
 body {
-  font-family: Avenir-Roman, sans-serif;
+  font-family: 'Roboto', sans-serif;
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 @media (min-width: 768px) {
