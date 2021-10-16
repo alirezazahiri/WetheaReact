@@ -110,11 +110,12 @@ const Details = styled.div`
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid ${props => props.colors.color};
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     border-radius: 4px;
   }
 
   @media (max-width: 540px) {
+    margin: 20px 10px;
     div {
       flex-direction: column;
     }

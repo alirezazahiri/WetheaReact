@@ -79,6 +79,10 @@ const Container = styled.div`
 
   display: flex;
   padding: 50px 80px;
+
+  @media (max-width: 540px) {
+    padding: 25px 20px;
+  }
 `;
 
 const Content = styled.div`
