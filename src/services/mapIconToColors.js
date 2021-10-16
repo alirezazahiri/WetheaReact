@@ -31,23 +31,23 @@ const ICONS = {
   "01d": { color: "#FFA400", img: sun },
   "02d": { color: "#FEE440", img: sun_cloud },
   "03d": { color: "#CEE5D0", img: cloud },
-  "04d": { color: "#0F00FF", img: rain },
-  "09d": { color: "#0F00FF", img: rain },
+  "04d": { color: "#69DADB", img: rain },
+  "09d": { color: "#1597E5", img: rain },
   "10d": { color: "#0F00FF", img: rain },
-  "11d": { color: "#345B63", img: lightning },
+  "11d": { color: "#172774", img: lightning },
   "13d": { color: "#f9f9f9", img: snow },
-  "50d": { color: "#10110F", img: mist },
+  "50d": { color: "#082032", img: mist },
 
   // NIGHT
   "01n": { color: "#FFA40066", img: sun_night },
   "02n": { color: "#FEE44066", img: sun_cloud_night },
   "03n": { color: "#CEE5D066", img: cloud_night },
-  "04n": { color: "#0F00FF66", img: rain_night },
-  "09n": { color: "#0F00FF66", img: rain_night },
+  "04n": { color: "#69DADB66", img: rain_night },
+  "09n": { color: "#1597E566", img: rain_night },
   "10n": { color: "#0F00FF66", img: rain_night },
-  "11n": { color: "#345B6366", img: lightning_night },
+  "11n": { color: "#17277466", img: lightning_night },
   "13n": { color: "#f9f9f966", img: snow_night },
-  "50n": { color: "#10110F66", img: mist_night },
+  "50n": { color: "#08203266", img: mist_night },
 };
 
 const invertColor = (hex) => {
