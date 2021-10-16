@@ -2,12 +2,12 @@ import React, { useEffect } from "react";
 
 // services
 import { convert } from "../services/fahrenheitToCentigrade";
-import { mapIconToBg } from "../services/mapIconToBg";
+import { mapIconToColors } from "../services/mapIconToColors";
 
 // styled
 import styled from "styled-components";
 
-const Information = ({ city, setBg }) => {
+const Information = ({ city, setColors, colors }) => {
   const { name, weather, main, sys } = city;
 
   // destructure the needed data from each part
@@ -19,9 +19,9 @@ const Information = ({ city, setBg }) => {
   const ICON_SRC = `https://openweathermap.org/img/wn/${icon}.png`;
 
   useEffect(() => {
-    setBg(mapIconToBg(icon));
-  }, [icon, setBg]);
-
+    setColors(mapIconToColors(icon));
+  }, [icon, setColors]);
+  
   return (
     <Container>
       <h1>
@@ -31,8 +31,8 @@ const Information = ({ city, setBg }) => {
         <h3>{status}</h3>
         <p>{description}</p>
       </Title>
-      <Icon src={ICON_SRC} alt="weather status" />
-      <Details>
+      <Icon src={ICON_SRC} alt="weather status" color={colors.color} />
+      <Details colors={colors}>
         <div>
           <h3>Temperature</h3>
           <h4>{convert(temp)}</h4>
@@ -88,7 +88,7 @@ const Title = styled.div`
 const Icon = styled.img`
   width: 40px;
   margin: auto;
-  background: rgba(0, 0, 0, 0.3);
+  background: ${props => props.color};
   border-radius: 50%;
 `;
 
@@ -97,12 +97,21 @@ const Details = styled.div`
   display: flex;
   flex-direction: column;
   margin: 20px 40px;
-
+  
   div {
+    background: ${props => `${props.colors.color}44`};
+    padding: 5px 5px 1px;
+    h3, h4 {
+      color: ${props => props.colors.txt};
+    }
+    h4 {
+      font-style: italic;
+    }
     display: flex;
     justify-content: space-between;
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid ${props => props.colors.color};
     margin-bottom: 8px;
+    border-radius: 4px;
   }
 
   @media (max-width: 540px) {

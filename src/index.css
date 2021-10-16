@@ -6,6 +6,7 @@
 :root {
   --primary-color: #112031;
   --secondary-color: #345B63;
+  --white: #EDEDED;
 }
 
 * {

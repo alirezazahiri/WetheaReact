@@ -1,7 +1,7 @@
 const initialState = {
   data: undefined,
   error: "",
-  loading: true,
+  loading: false,
 };
 
 const weatherReducer = (state = initialState, action) => {
